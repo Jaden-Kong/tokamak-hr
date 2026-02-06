@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokamak Network - Monthly Report (2026-01-01_2026-01-31)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2 {
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        .period { text-align: center; color: #888; margin-bottom: 30px; }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { font-size: 0.9em; color: #888; margin-bottom: 10px; }
+        .card .number { font-size: 2.5em; font-weight: bold; }
+        .card.drive .number { color: #4285f4; }
+        .card.github .number { color: #238636; }
+        .card.slack .number { color: #e01e5a; }
+        .card.notion .number { color: #fff; }
+        .chart-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        th, td { padding: 16px; text-align: left; }
+        th {
+            background: rgba(255,255,255,0.1);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+        tr:hover { background: rgba(255,255,255,0.05); }
+        td:not(:first-child) { text-align: center; }
+        th:not(:first-child) { text-align: center; }
+        .score { font-weight: bold; color: #00d4ff; }
+        .rank { width: 50px; font-weight: bold; color: #888; }
+        .rank-1 { color: #ffd700; }
+        .rank-2 { color: #c0c0c0; }
+        .rank-3 { color: #cd7f32; }
+
+        /* GitHub Details Section */
+        .github-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .github-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+        .github-card-header {
+            background: rgba(35, 134, 54, 0.3);
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .github-card-header h3 { margin-bottom: 8px; }
+        .github-stats { display: flex; gap: 16px; font-size: 0.85em; color: #888; }
+        .github-stats .stat strong { color: #238636; }
+        .github-card-body { padding: 20px; }
+        .github-section { margin-bottom: 20px; }
+        .github-section:last-child { margin-bottom: 0; }
+        .github-section h4 { font-size: 0.8em; color: #888; margin-bottom: 10px; text-transform: uppercase; }
+        .repos-list { display: flex; flex-direction: column; gap: 6px; }
+        .repo-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        .repo-name { color: #58a6ff; }
+        .repo-count { color: #888; }
+        .keywords-chart { display: flex; flex-direction: column; gap: 8px; }
+        .keyword-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85em;
+        }
+        .keyword-label { width: 70px; color: #888; }
+        .bar-container {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .bar { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .keyword-pct { width: 40px; text-align: right; color: #888; }
+        .commits-list { display: flex; flex-direction: column; gap: 6px; }
+        .commit-item {
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            font-size: 0.85em;
+            color: #aaa;
+            border-left: 3px solid #238636;
+        }
+
+        @media (max-width: 768px) {
+            .summary { grid-template-columns: repeat(2, 1fr); }
+            .github-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tokamak Network</h1>
+        <p class="period">Monthly Activity Report - 2026-01-01_2026-01-31</p>
+
+        <div class="summary">
+            <div class="card drive">
+                <h3>Google Drive</h3>
+                <div class="number">2259</div>
+            </div>
+            <div class="card github">
+                <h3>GitHub</h3>
+                <div class="number">1290</div>
+            </div>
+            <div class="card slack">
+                <h3>Slack</h3>
+                <div class="number">1681</div>
+            </div>
+            <div class="card notion">
+                <h3>Notion</h3>
+                <div class="number">638</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="activityChart"></canvas>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="rank">#</th>
+                    <th>Member</th>
+                    <th>Drive</th>
+                    <th>GitHub</th>
+                    <th>Slack</th>
+                    <th>Notion</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank rank-1">1</td>
+                    <td>Kevin</td>
+                    <td>1097</td>
+                    <td>36</td>
+                    <td>136</td>
+                    <td>1</td>
+                    <td class="score">2441</td>
+                </tr>
+                <tr>
+                    <td class="rank rank-2">2</td>
+                    <td>Ale</td>
+                    <td>23</td>
+                    <td>319</td>
+                    <td>111</td>
+                    <td>9</td>
+                    <td class="score">1166</td>
+                </tr>
+                <tr>
+                    <td class="rank rank-3">3</td>
+                    <td>Jake</td>
+                    <td>98</td>
+                    <td>154</td>
+                    <td>411</td>
+                    <td>3</td>
+                    <td class="score">1151</td>
+                </tr>
+                <tr>
+                    <td class="rank ">4</td>
+                    <td>Thomas</td>
+                    <td>26</td>
+                    <td>43</td>
+                    <td>28</td>
+                    <td>413</td>
+                    <td class="score">1047</td>
+                </tr>
+                <tr>
+                    <td class="rank ">5</td>
+                    <td>Mehdi</td>
+                    <td>9</td>
+                    <td>165</td>
+                    <td>294</td>
+                    <td>3</td>
+                    <td class="score">897</td>
+                </tr>
+                <tr>
+                    <td class="rank ">6</td>
+                    <td>Theo</td>
+                    <td>137</td>
+                    <td>83</td>
+                    <td>60</td>
+                    <td>97</td>
+                    <td class="score">795</td>
+                </tr>
+                <tr>
+                    <td class="rank ">7</td>
+                    <td>Jaden</td>
+                    <td>312</td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td class="score">646</td>
+                </tr>
+                <tr>
+                    <td class="rank ">8</td>
+                    <td>Harvey</td>
+                    <td>81</td>
+                    <td>136</td>
+                    <td>32</td>
+                    <td>0</td>
+                    <td class="score">602</td>
+                </tr>
+                <tr>
+                    <td class="rank ">9</td>
+                    <td>Zena</td>
+                    <td>38</td>
+                    <td>151</td>
+                    <td>29</td>
+                    <td>1</td>
+                    <td class="score">561</td>
+                </tr>
+                <tr>
+                    <td class="rank ">10</td>
+                    <td>Irene</td>
+                    <td>227</td>
+                    <td>0</td>
+                    <td>29</td>
+                    <td>0</td>
+                    <td class="score">483</td>
+                </tr>
+                <tr>
+                    <td class="rank ">11</td>
+                    <td>Sahil</td>
+                    <td>7</td>
+                    <td>56</td>
+                    <td>45</td>
+                    <td>20</td>
+                    <td class="score">267</td>
+                </tr>
+                <tr>
+                    <td class="rank ">12</td>
+                    <td>Aryan</td>
+                    <td>12</td>
+                    <td>42</td>
+                    <td>58</td>
+                    <td>1</td>
+                    <td class="score">235</td>
+                </tr>
+                <tr>
+                    <td class="rank ">13</td>
+                    <td>George</td>
+                    <td>6</td>
+                    <td>10</td>
+                    <td>71</td>
+                    <td>55</td>
+                    <td class="score">229</td>
+                </tr>
+                <tr>
+                    <td class="rank ">14</td>
+                    <td>Aamir</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>59</td>
+                    <td>6</td>
+                    <td class="score">188</td>
+                </tr>
+                <tr>
+                    <td class="rank ">15</td>
+                    <td>Praveen</td>
+                    <td>52</td>
+                    <td>0</td>
+                    <td>70</td>
+                    <td>4</td>
+                    <td class="score">184</td>
+                </tr>
+                <tr>
+                    <td class="rank ">16</td>
+                    <td>Suhyeon</td>
+                    <td>23</td>
+                    <td>11</td>
+                    <td>101</td>
+                    <td>0</td>
+                    <td class="score">180</td>
+                </tr>
+                <tr>
+                    <td class="rank ">17</td>
+                    <td>Jeongun Baek</td>
+                    <td>1</td>
+                    <td>25</td>
+                    <td>66</td>
+                    <td>0</td>
+                    <td class="score">159</td>
+                </tr>
+                <tr>
+                    <td class="rank ">18</td>
+                    <td>Singh</td>
+                    <td>28</td>
+                    <td>22</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="score">157</td>
+                </tr>
+                <tr>
+                    <td class="rank ">19</td>
+                    <td>Jason</td>
+                    <td>17</td>
+                    <td>15</td>
+                    <td>22</td>
+                    <td>19</td>
+                    <td class="score">146</td>
+                </tr>
+                <tr>
+                    <td class="rank ">20</td>
+                    <td>Monica</td>
+                    <td>34</td>
+                    <td>0</td>
+                    <td>28</td>
+                    <td>0</td>
+                    <td class="score">96</td>
+                </tr>
+                <tr>
+                    <td class="rank ">21</td>
+                    <td>Rangga</td>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td class="score">23</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>GitHub Development Analysis</h2>
+        <div class="github-grid">
+            
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Kevin</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>36</strong> commits</span>
+                    <span class="stat"><strong>0</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">zk-dex</span><span class="repo-count">36</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 30.555555555555557%; background: #238636;"></div></div><span class="keyword-pct">31%</span></div><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 27.77777777777778%; background: #0969da;"></div></div><span class="keyword-pct">28%</span></div><div class="keyword-bar"><span class="keyword-label">refactor</span><div class="bar-container"><div class="bar" style="width: 16.666666666666664%; background: #8957e5;"></div></div><span class="keyword-pct">17%</span></div><div class="keyword-bar"><span class="keyword-label">other</span><div class="bar-container"><div class="bar" style="width: 11.11111111111111%; background: #484f58;"></div></div><span class="keyword-pct">11%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 8.333333333333332%; background: #da3633;"></div></div><span class="keyword-pct">8%</span></div><div class="keyword-bar"><span class="keyword-label">test</span><div class="bar-container"><div class="bar" style="width: 2.7777777777777777%; background: #bf8700;"></div></div><span class="keyword-pct">3%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">docs: complete J-Protocol product documentation and finalize...</div><div class="commit-item">docs: restructure future docs with product separation and Ko...</div><div class="commit-item">docs: reorganize documentation structure and add ZKDIP-1  - ...</div><div class="commit-item">security: fix development mode hardcoding vulnerability (Hig...</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Ale</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>299</strong> commits</span>
+                    <span class="stat"><strong>13</strong> PRs</span>
+                    <span class="stat"><strong>7</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">private-app-channel-manager</span><span class="repo-count">127</span></div><div class="repo-item"><span class="repo-name">all-thing-eye</span><span class="repo-count">70</span></div><div class="repo-item"><span class="repo-name">tokamak-zkp-channel-manager-new</span><span class="repo-count">59</span></div><div class="repo-item"><span class="repo-name">tokamak-app-hub</span><span class="repo-count">36</span></div><div class="repo-item"><span class="repo-name">Tokamak-zk-EVM</span><span class="repo-count">4</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 42.14046822742475%; background: #238636;"></div></div><span class="keyword-pct">42%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 33.11036789297659%; background: #da3633;"></div></div><span class="keyword-pct">33%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 8.361204013377927%; background: #768390;"></div></div><span class="keyword-pct">8%</span></div><div class="keyword-bar"><span class="keyword-label">refactor</span><div class="bar-container"><div class="bar" style="width: 5.68561872909699%; background: #8957e5;"></div></div><span class="keyword-pct">6%</span></div><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 4.013377926421405%; background: #0969da;"></div></div><span class="keyword-pct">4%</span></div><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 3.0100334448160537%; background: #6e7681;"></div></div><span class="keyword-pct">3%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">fix: add zk category to app schema</div><div class="commit-item">refactor: revert to local file reading, rely on Vercel rebui...</div><div class="commit-item">Update apps.json</div><div class="commit-item">fix: force dynamic rendering for homepage to reflect real-ti...</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Jake</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>92</strong> commits</span>
+                    <span class="stat"><strong>13</strong> PRs</span>
+                    <span class="stat"><strong>49</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">Tokamak-zk-EVM</span><span class="repo-count">51</span></div><div class="repo-item"><span class="repo-name">TokamakL2JS</span><span class="repo-count">32</span></div><div class="repo-item"><span class="repo-name">DEPRECATED-Tokamak-zkp-channel-manager</span><span class="repo-count">6</span></div><div class="repo-item"><span class="repo-name">Ooo-report-generator</span><span class="repo-count">2</span></div><div class="repo-item"><span class="repo-name">Tokamak-zk-EVM-contracts</span><span class="repo-count">1</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">other</span><div class="bar-container"><div class="bar" style="width: 55.434782608695656%; background: #484f58;"></div></div><span class="keyword-pct">55%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 17.391304347826086%; background: #768390;"></div></div><span class="keyword-pct">17%</span></div><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 14.130434782608695%; background: #6e7681;"></div></div><span class="keyword-pct">14%</span></div><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 7.608695652173914%; background: #238636;"></div></div><span class="keyword-pct">8%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 3.260869565217391%; background: #da3633;"></div></div><span class="keyword-pct">3%</span></div><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 1.0869565217391304%; background: #0969da;"></div></div><span class="keyword-pct">1%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">docs: update timing report guidance</div><div class="commit-item">Removed future work from generated report, updated prompt an...</div><div class="commit-item">Updated prompt and generated 2026 Jan report</div><div class="commit-item">Add config-gen-bot docs and reorganize synthesizer docs</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Thomas</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>43</strong> commits</span>
+                    <span class="stat"><strong>0</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">tokamak-dao-v2</span><span class="repo-count">43</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 30.23255813953488%; background: #238636;"></div></div><span class="keyword-pct">30%</span></div><div class="keyword-bar"><span class="keyword-label">refactor</span><div class="bar-container"><div class="bar" style="width: 23.25581395348837%; background: #8957e5;"></div></div><span class="keyword-pct">23%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 18.6046511627907%; background: #da3633;"></div></div><span class="keyword-pct">19%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 16.27906976744186%; background: #768390;"></div></div><span class="keyword-pct">16%</span></div><div class="keyword-bar"><span class="keyword-label">style</span><div class="bar-container"><div class="bar" style="width: 9.30232558139535%; background: #ff7b72;"></div></div><span class="keyword-pct">9%</span></div><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 2.3255813953488373%; background: #0969da;"></div></div><span class="keyword-pct">2%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">chore(contracts): update Sepolia deployment addresses  - Upd...</div><div class="commit-item">chore(contracts): update vTON address in faucet deploy scrip...</div><div class="commit-item">fix(proposals): pass onVoteSuccess callback through componen...</div><div class="commit-item">fix(proposals): correct vote display and VoteType enum order...</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Mehdi</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>109</strong> commits</span>
+                    <span class="stat"><strong>25</strong> PRs</span>
+                    <span class="stat"><strong>31</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">Tokamak-zk-EVM-contracts</span><span class="repo-count">82</span></div><div class="repo-item"><span class="repo-name">DRB-node</span><span class="repo-count">20</span></div><div class="repo-item"><span class="repo-name">DEPRECATED-Tokamak-zkp-channel-manager</span><span class="repo-count">6</span></div><div class="repo-item"><span class="repo-name">Tokamak-zk-EVM</span><span class="repo-count">1</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">other</span><div class="bar-container"><div class="bar" style="width: 43.11926605504588%; background: #484f58;"></div></div><span class="keyword-pct">43%</span></div><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 21.100917431192663%; background: #6e7681;"></div></div><span class="keyword-pct">21%</span></div><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 14.678899082568808%; background: #238636;"></div></div><span class="keyword-pct">15%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 13.761467889908257%; background: #da3633;"></div></div><span class="keyword-pct">14%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 5.5045871559633035%; background: #768390;"></div></div><span class="keyword-pct">6%</span></div><div class="keyword-bar"><span class="keyword-label">refactor</span><div class="bar-container"><div class="bar" style="width: 1.834862385321101%; background: #8957e5;"></div></div><span class="keyword-pct">2%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">Merge pull request #69 from tokamak-network/fix/remove-redun...</div><div class="commit-item">Merge pull request #76 from tokamak-network/fix/issue-54  fi...</div><div class="commit-item">Merge pull request #75 from tokamak-network/fix/issue-51  fi...</div><div class="commit-item">Implement Q2 2026 async channels upgrade  - Add BridgeStakin...</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Theo</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>70</strong> commits</span>
+                    <span class="stat"><strong>3</strong> PRs</span>
+                    <span class="stat"><strong>10</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">tokamak-thanos</span><span class="repo-count">33</span></div><div class="repo-item"><span class="repo-name">trh-sdk</span><span class="repo-count">22</span></div><div class="repo-item"><span class="repo-name">trh-platform-ui</span><span class="repo-count">8</span></div><div class="repo-item"><span class="repo-name">trh-backend</span><span class="repo-count">6</span></div><div class="repo-item"><span class="repo-name">tokamak-thanos-stack</span><span class="repo-count">1</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 50.0%; background: #238636;"></div></div><span class="keyword-pct">50%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 17.142857142857142%; background: #da3633;"></div></div><span class="keyword-pct">17%</span></div><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 11.428571428571429%; background: #0969da;"></div></div><span class="keyword-pct">11%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 10.0%; background: #768390;"></div></div><span class="keyword-pct">10%</span></div><div class="keyword-bar"><span class="keyword-label">refactor</span><div class="bar-container"><div class="bar" style="width: 10.0%; background: #8957e5;"></div></div><span class="keyword-pct">10%</span></div><div class="keyword-bar"><span class="keyword-label">test</span><div class="bar-container"><div class="bar" style="width: 1.4285714285714286%; background: #bf8700;"></div></div><span class="keyword-pct">1%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">chore: fix lint</div><div class="commit-item">fix: prevent destroy hanging by cleaning EFS mount targets f...</div><div class="commit-item">fix(backup): improve readability of restore and attach dialo...</div><div class="commit-item">docs: add backup guides and update SDK dependency</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Harvey</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>136</strong> commits</span>
+                    <span class="stat"><strong>0</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">ton-staking-v2</span><span class="repo-count">136</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 57.35294117647059%; background: #768390;"></div></div><span class="keyword-pct">57%</span></div><div class="keyword-bar"><span class="keyword-label">other</span><div class="bar-container"><div class="bar" style="width: 36.029411764705884%; background: #484f58;"></div></div><span class="keyword-pct">36%</span></div><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 3.6764705882352944%; background: #238636;"></div></div><span class="keyword-pct">4%</span></div><div class="keyword-bar"><span class="keyword-label">test</span><div class="bar-container"><div class="bar" style="width: 1.4705882352941175%; background: #bf8700;"></div></div><span class="keyword-pct">1%</span></div><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 0.7352941176470588%; background: #6e7681;"></div></div><span class="keyword-pct">1%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 0.7352941176470588%; background: #da3633;"></div></div><span class="keyword-pct">1%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">Advanced Slashing Logic update  Modified to allow multiple c...</div><div class="commit-item">Organizing documents  Change folder to avoid confusion with ...</div><div class="commit-item">English version update</div><div class="commit-item">Create option-b-bonus-plus-equal-plan.md</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Zena</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>151</strong> commits</span>
+                    <span class="stat"><strong>0</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">ton-staking-v2</span><span class="repo-count">144</span></div><div class="repo-item"><span class="repo-name">opencode</span><span class="repo-count">6</span></div><div class="repo-item"><span class="repo-name">TON-total-supply</span><span class="repo-count">1</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 29.13907284768212%; background: #0969da;"></div></div><span class="keyword-pct">29%</span></div><div class="keyword-bar"><span class="keyword-label">test</span><div class="bar-container"><div class="bar" style="width: 17.880794701986755%; background: #bf8700;"></div></div><span class="keyword-pct">18%</span></div><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 15.894039735099339%; background: #238636;"></div></div><span class="keyword-pct">16%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 13.90728476821192%; background: #768390;"></div></div><span class="keyword-pct">14%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 8.609271523178808%; background: #da3633;"></div></div><span class="keyword-pct">9%</span></div><div class="keyword-bar"><span class="keyword-label">refactor</span><div class="bar-container"><div class="bar" style="width: 7.9470198675496695%; background: #8957e5;"></div></div><span class="keyword-pct">8%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">Merge branch 'ton-staking-v3/dev' into ton-staking-v3/dev-ra...</div><div class="commit-item">docs: clarify V3 purpose and seigniorage distribution strate...</div><div class="commit-item">docs: streamline README by removing redundant sections  - Re...</div><div class="commit-item">docs: add developer guide links to README  - Add prominent D...</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Sahil</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>56</strong> commits</span>
+                    <span class="stat"><strong>0</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">trh-sdk</span><span class="repo-count">20</span></div><div class="repo-item"><span class="repo-name">trh-platform-ui</span><span class="repo-count">14</span></div><div class="repo-item"><span class="repo-name">trh-backend</span><span class="repo-count">11</span></div><div class="repo-item"><span class="repo-name">DRB-node</span><span class="repo-count">6</span></div><div class="repo-item"><span class="repo-name">tokamak-rollup-hub-v2</span><span class="repo-count">5</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 30.357142857142854%; background: #da3633;"></div></div><span class="keyword-pct">30%</span></div><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 26.785714285714285%; background: #238636;"></div></div><span class="keyword-pct">27%</span></div><div class="keyword-bar"><span class="keyword-label">other</span><div class="bar-container"><div class="bar" style="width: 17.857142857142858%; background: #484f58;"></div></div><span class="keyword-pct">18%</span></div><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 14.285714285714285%; background: #6e7681;"></div></div><span class="keyword-pct">14%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 7.142857142857142%; background: #768390;"></div></div><span class="keyword-pct">7%</span></div><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 1.7857142857142856%; background: #0969da;"></div></div><span class="keyword-pct">2%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">added port validation for regular nodes  validates nodePort ...</div><div class="commit-item">added regular node support - creates separate stack and retu...</div><div class="commit-item">improved DRB overview tab to show deploying state  now shows...</div><div class="commit-item">added DRB uninstall action for system stacks  system stacks ...</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Aryan</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>23</strong> commits</span>
+                    <span class="stat"><strong>5</strong> PRs</span>
+                    <span class="stat"><strong>14</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">DRB-node</span><span class="repo-count">23</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 65.21739130434783%; background: #238636;"></div></div><span class="keyword-pct">65%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 17.391304347826086%; background: #da3633;"></div></div><span class="keyword-pct">17%</span></div><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 13.043478260869565%; background: #6e7681;"></div></div><span class="keyword-pct">13%</span></div><div class="keyword-bar"><span class="keyword-label">test</span><div class="bar-container"><div class="bar" style="width: 4.3478260869565215%; background: #bf8700;"></div></div><span class="keyword-pct">4%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">feat: fetch the missed event during web socket reconnection</div><div class="commit-item">feat: update the libp2p connection parameters</div><div class="commit-item">fix: distinguid between not found and actual errors in datab...</div><div class="commit-item">fix: implement the verification first in HandleSecretValueRe...</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>George</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>8</strong> commits</span>
+                    <span class="stat"><strong>2</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">tokamak-thanos</span><span class="repo-count">5</span></div><div class="repo-item"><span class="repo-name">tokamak-rollup-hub-v2</span><span class="repo-count">2</span></div><div class="repo-item"><span class="repo-name">trh-sdk</span><span class="repo-count">1</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">other</span><div class="bar-container"><div class="bar" style="width: 62.5%; background: #484f58;"></div></div><span class="keyword-pct">62%</span></div><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 25.0%; background: #238636;"></div></div><span class="keyword-pct">25%</span></div><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 12.5%; background: #6e7681;"></div></div><span class="keyword-pct">12%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">Merge pull request #9 from tokamak-network/titleChange  Smal...</div><div class="commit-item">small title change</div><div class="commit-item">add getStorageAt and restore Safe from SafeExtender</div><div class="commit-item">remove SafeExtender.sol</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Aamir</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>18</strong> commits</span>
+                    <span class="stat"><strong>4</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">Tokamak-zk-EVM-landing-page</span><span class="repo-count">16</span></div><div class="repo-item"><span class="repo-name">syb-network-landing-page</span><span class="repo-count">2</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 66.66666666666666%; background: #238636;"></div></div><span class="keyword-pct">67%</span></div><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 22.22222222222222%; background: #6e7681;"></div></div><span class="keyword-pct">22%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 11.11111111111111%; background: #768390;"></div></div><span class="keyword-pct">11%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">Merge pull request #16 from tokamak-network/staging  Update ...</div><div class="commit-item">Update footer layout and optimize SEO for Google sitelinks</div><div class="commit-item">Merge pull request #15 from tokamak-network/staging  Staging...</div><div class="commit-item">chore: update content from full evm to only evm</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Suhyeon</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>11</strong> commits</span>
+                    <span class="stat"><strong>0</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">optimism</span><span class="repo-count">6</span></div><div class="repo-item"><span class="repo-name">tokamak-economics-whitepaper-v2</span><span class="repo-count">5</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">merge</span><div class="bar-container"><div class="bar" style="width: 27.27272727272727%; background: #6e7681;"></div></div><span class="keyword-pct">27%</span></div><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 27.27272727272727%; background: #0969da;"></div></div><span class="keyword-pct">27%</span></div><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 27.27272727272727%; background: #238636;"></div></div><span class="keyword-pct">27%</span></div><div class="keyword-bar"><span class="keyword-label">other</span><div class="bar-container"><div class="bar" style="width: 9.090909090909092%; background: #484f58;"></div></div><span class="keyword-pct">9%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 9.090909090909092%; background: #768390;"></div></div><span class="keyword-pct">9%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">shared verification economics layer -> systemized verficiati...</div><div class="commit-item">Merge overleaf-2026-01-22-1531 into main</div><div class="commit-item">Updates from Overleaf</div><div class="commit-item">docs: clarify gas measurement scopes  Explain the difference...</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Jeongun Baek</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>16</strong> commits</span>
+                    <span class="stat"><strong>7</strong> PRs</span>
+                    <span class="stat"><strong>2</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">tokamak-network-mcp</span><span class="repo-count">11</span></div><div class="repo-item"><span class="repo-name">DRB-node</span><span class="repo-count">5</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 25.0%; background: #238636;"></div></div><span class="keyword-pct">25%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 18.75%; background: #da3633;"></div></div><span class="keyword-pct">19%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 18.75%; background: #768390;"></div></div><span class="keyword-pct">19%</span></div><div class="keyword-bar"><span class="keyword-label">docs</span><div class="bar-container"><div class="bar" style="width: 18.75%; background: #0969da;"></div></div><span class="keyword-pct">19%</span></div><div class="keyword-bar"><span class="keyword-label">refactor</span><div class="bar-container"><div class="bar" style="width: 12.5%; background: #8957e5;"></div></div><span class="keyword-pct">12%</span></div><div class="keyword-bar"><span class="keyword-label">test</span><div class="bar-container"><div class="bar" style="width: 6.25%; background: #bf8700;"></div></div><span class="keyword-pct">6%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">feat: serialize transaction execution with mutex  Add txMu m...</div><div class="commit-item">refactor: remove ChainID RPC call in favor of env config</div><div class="commit-item">fix:remove redundant `estimateGas` call from `ExecuteTransac...</div><div class="commit-item">test: add EstimateGas all servers fail test case</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Singh</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>12</strong> commits</span>
+                    <span class="stat"><strong>3</strong> PRs</span>
+                    <span class="stat"><strong>7</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">trh-platform-ui</span><span class="repo-count">6</span></div><div class="repo-item"><span class="repo-name">trh-backend</span><span class="repo-count">3</span></div><div class="repo-item"><span class="repo-name">trh-sdk</span><span class="repo-count">3</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 75.0%; background: #238636;"></div></div><span class="keyword-pct">75%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 25.0%; background: #da3633;"></div></div><span class="keyword-pct">25%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">fix: build issues</div><div class="commit-item">fix: Logic as per gemini reviewer comments</div><div class="commit-item">fix: Updated interfaces</div><div class="commit-item">feat: Updated ui design for backup integration updates</div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-card">
+            <div class="github-card-header">
+                <h3>Jason</h3>
+                <div class="github-stats">
+                    <span class="stat"><strong>13</strong> commits</span>
+                    <span class="stat"><strong>2</strong> PRs</span>
+                    <span class="stat"><strong>0</strong> reviews</span>
+                </div>
+            </div>
+            <div class="github-card-body">
+                <div class="github-section">
+                    <h4>Repositories</h4>
+                    <div class="repos-list"><div class="repo-item"><span class="repo-name">tokamak-economics-whitepaper-v2</span><span class="repo-count">6</span></div><div class="repo-item"><span class="repo-name">staking-community-version</span><span class="repo-count">3</span></div><div class="repo-item"><span class="repo-name">tokamak-landing-page</span><span class="repo-count">2</span></div><div class="repo-item"><span class="repo-name">ECO-report-generator</span><span class="repo-count">1</span></div><div class="repo-item"><span class="repo-name">RAT-frontend</span><span class="repo-count">1</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Commit Types</h4>
+                    <div class="keywords-chart"><div class="keyword-bar"><span class="keyword-label">feat</span><div class="bar-container"><div class="bar" style="width: 30.76923076923077%; background: #238636;"></div></div><span class="keyword-pct">31%</span></div><div class="keyword-bar"><span class="keyword-label">fix</span><div class="bar-container"><div class="bar" style="width: 30.76923076923077%; background: #da3633;"></div></div><span class="keyword-pct">31%</span></div><div class="keyword-bar"><span class="keyword-label">other</span><div class="bar-container"><div class="bar" style="width: 23.076923076923077%; background: #484f58;"></div></div><span class="keyword-pct">23%</span></div><div class="keyword-bar"><span class="keyword-label">perf</span><div class="bar-container"><div class="bar" style="width: 7.6923076923076925%; background: #3fb950;"></div></div><span class="keyword-pct">8%</span></div><div class="keyword-bar"><span class="keyword-label">chore</span><div class="bar-container"><div class="bar" style="width: 7.6923076923076925%; background: #768390;"></div></div><span class="keyword-pct">8%</span></div></div>
+                </div>
+                <div class="github-section">
+                    <h4>Recent Commits</h4>
+                    <div class="commits-list"><div class="commit-item">feat: enhance report prompts with new structure and formatti...</div><div class="commit-item">Optimize operator loading with two-phase fetch and multicall...</div><div class="commit-item">Initial commit: RAT Dashboard frontend  RAT (Randomized Atte...</div><div class="commit-item">remove jeff & jamie</div></div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('activityChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Kevin', 'Ale', 'Jake', 'Thomas', 'Mehdi', 'Theo', 'Jaden', 'Harvey', 'Zena', 'Irene', 'Sahil', 'Aryan', 'George', 'Aamir', 'Praveen'],
+                datasets: [
+                    {
+                        label: 'Drive',
+                        data: [1097, 23, 98, 26, 9, 137, 312, 81, 38, 227, 7, 12, 6, 21, 52],
+                        backgroundColor: 'rgba(66, 133, 244, 0.8)',
+                    },
+                    {
+                        label: 'GitHub',
+                        data: [36, 319, 154, 43, 165, 83, 0, 136, 151, 0, 56, 42, 10, 22, 0],
+                        backgroundColor: 'rgba(35, 134, 54, 0.8)',
+                    },
+                    {
+                        label: 'Slack',
+                        data: [136, 111, 411, 28, 294, 60, 6, 32, 29, 29, 45, 58, 71, 59, 70],
+                        backgroundColor: 'rgba(224, 30, 90, 0.8)',
+                    },
+                    {
+                        label: 'Notion',
+                        data: [1, 9, 3, 413, 3, 97, 6, 0, 1, 0, 20, 1, 55, 6, 4],
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: { color: '#fff' }
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: { color: '#888' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: { color: '#888' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
