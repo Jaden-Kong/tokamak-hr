@@ -371,6 +371,7 @@ def generate_one(
     video_file: str | None,
     drive_service=None,
     drive_folder_id: str | None = None,
+    prep_deploy: bool = False,
 ) -> int:
     if video_file and not os.path.exists(video_file):
         print(f"Video file not found: {video_file}", file=sys.stderr)
@@ -476,6 +477,17 @@ def generate_one(
     print(f"Generated: {pdf_path}")
     print(f"Generated: {txt_path}")
 
+    if prep_deploy:
+        deploy_dir = os.path.join(output_dir, f"deploy_{sanitize_filename(name)}")
+        os.makedirs(deploy_dir, exist_ok=True)
+        index_path = os.path.join(deploy_dir, "index.html")
+        shutil.copy2(html_path, index_path)
+        if video_file and os.path.exists(video_file):
+            shutil.copy2(video_file, os.path.join(deploy_dir, os.path.basename(video_file)))
+        elif video_url and os.path.exists(video_url):
+            shutil.copy2(video_url, os.path.join(deploy_dir, os.path.basename(video_url)))
+        print(f"Prepared deploy folder: {deploy_dir}")
+
     if drive_service and drive_folder_id:
         html_id = drive_upload_file(drive_service, html_path, os.path.basename(html_path), drive_folder_id)
         drive_set_anyone_with_link(drive_service, html_id)
@@ -499,6 +511,11 @@ def main() -> int:
     parser.add_argument("--video-file", help="Local MP4 file to copy into output dir.")
     parser.add_argument("--csv", help="CSV file for bulk generation.")
     parser.add_argument("--output-dir", default=".")
+    parser.add_argument(
+        "--prep-deploy",
+        action="store_true",
+        help="Create deploy_<name> folder with index.html + mp4 for drag-and-drop hosting.",
+    )
     parser.add_argument("--drive-upload", action="store_true", help="Upload HTML/video to Google Drive.")
     parser.add_argument("--drive-folder-id", help="Google Drive folder ID for uploads.")
     parser.add_argument(
@@ -577,6 +594,7 @@ def main() -> int:
                     video_file=video_file,
                     drive_service=drive_service,
                     drive_folder_id=args.drive_folder_id,
+                    prep_deploy=args.prep_deploy,
                 )
                 if uploaded_welcome_url and "welcome_url" in fieldnames:
                     row["welcome_url"] = uploaded_welcome_url
@@ -631,6 +649,7 @@ def main() -> int:
             video_file=args.video_file,
             drive_service=drive_service,
             drive_folder_id=args.drive_folder_id,
+            prep_deploy=args.prep_deploy,
         )
 
         if not args.live and args.name and args.team and args.start_date and (args.video_url or args.video_file):

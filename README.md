@@ -73,6 +73,14 @@ Optional:
 python3 generate_onboarding_package.py --csv new_hires.csv
 ```
 
+### Deploy Folder (for drag-and-drop hosting)
+
+Create a deploy folder that includes `index.html` and the mp4 so you can drag it into Netlify Drop / Cloudflare Pages.
+
+```bash
+python3 generate_onboarding_package.py --csv new_hires.csv --prep-deploy
+```
+
 ## Google Drive Upload (OAuth)
 
 자동 업로드로 welcome HTML과 영상을 Google Drive에 올리고, 공유 링크를 생성할 수 있습니다.
