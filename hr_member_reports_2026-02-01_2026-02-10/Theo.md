@@ -1,0 +1,395 @@
+# HR Activity Report - Theo
+
+Records: 239
+
+## By Source
+- github: 163
+- slack: 58
+- drive: 15
+- notion: 3
+
+## By Type
+- commit: 154
+- message: 58
+- sync_item_content: 9
+- review: 6
+- pull_request: 3
+- 편집 (2회): 2
+- content_diff: 2
+- 편집 (5회): 1
+- 편집 (3회): 1
+- 편집 (10회): 1
+- 이름 변경: 1
+- page: 1
+
+## Records (latest first)
+| timestamp | source | type | action | title |
+|---|---|---|---|---|
+| 2026-02-10 06:01:26 | github | commit |  |  |
+| 2026-02-10 05:47:03 | github | commit |  |  |
+| 2026-02-10 05:42:29 | github | commit |  |  |
+| 2026-02-10 05:40:30 | github | commit |  |  |
+| 2026-02-10 05:13:53 | github | commit |  |  |
+| 2026-02-10 05:10:24 | github | commit |  |  |
+| 2026-02-10 05:03:52 | github | commit |  |  |
+| 2026-02-10 04:58:30 | github | commit |  |  |
+| 2026-02-10 04:54:19 | github | commit |  |  |
+| 2026-02-10 04:52:04 | github | commit |  |  |
+| 2026-02-10 04:50:49 | github | commit |  |  |
+| 2026-02-10 04:38:51 | github | commit |  |  |
+| 2026-02-10 04:37:36 | github | commit |  |  |
+| 2026-02-10 04:33:52 | github | commit |  |  |
+| 2026-02-10 03:48:00 | github | commit |  |  |
+| 2026-02-10 03:46:39 | github | commit |  |  |
+| 2026-02-10 03:45:17 | github | commit |  |  |
+| 2026-02-10 03:43:57 | github | commit |  |  |
+| 2026-02-10 03:42:26 | github | commit |  |  |
+| 2026-02-10 03:40:38 | github | commit |  |  |
+| 2026-02-10 03:28:17 | github | commit |  |  |
+| 2026-02-10 03:22:40 | github | commit |  |  |
+| 2026-02-10 03:21:15 | github | commit |  |  |
+| 2026-02-10 03:20:23 | github | commit |  |  |
+| 2026-02-10 03:14:03 | github | commit |  |  |
+| 2026-02-10 02:55:22 | github | commit |  |  |
+| 2026-02-10 02:49:00 | github | commit |  |  |
+| 2026-02-10 02:45:33 | github | commit |  |  |
+| 2026-02-10 02:41:36 | github | commit |  |  |
+| 2026-02-10 02:41:27 | github | commit |  |  |
+| 2026-02-10 02:41:18 | github | commit |  |  |
+| 2026-02-10 02:21:45 | github | commit |  |  |
+| 2026-02-10 02:21:44 | github | commit |  |  |
+| 2026-02-10 02:20:04 | github | commit |  |  |
+| 2026-02-10 02:20:04 | github | commit |  |  |
+| 2026-02-10 01:56:56 | github | commit |  |  |
+| 2026-02-10 01:56:42 | github | commit |  |  |
+| 2026-02-10 01:56:35 | github | commit |  |  |
+| 2026-02-10 01:56:26 | github | commit |  |  |
+| 2026-02-09 11:19:57 | github | commit |  |  |
+| 2026-02-09 11:15:02 | github | commit |  |  |
+| 2026-02-09 11:14:24 | github | commit |  |  |
+| 2026-02-09 11:14:14 | github | commit |  |  |
+| 2026-02-09 11:10:45 | github | commit |  |  |
+| 2026-02-09 11:06:19 | github | commit |  |  |
+| 2026-02-09 11:04:30 | github | commit |  |  |
+| 2026-02-09 11:02:01 | github | commit |  |  |
+| 2026-02-09 10:53:33 | github | commit |  |  |
+| 2026-02-09 10:49:26 | github | commit |  |  |
+| 2026-02-09 10:44:01 | github | commit |  |  |
+| 2026-02-09 10:39:21 | github | commit |  |  |
+| 2026-02-09 10:30:12 | github | commit |  |  |
+| 2026-02-09 10:19:54 | github | commit |  |  |
+| 2026-02-09 09:40:14 | github | commit |  |  |
+| 2026-02-09 08:49:30 | github | commit |  |  |
+| 2026-02-09 05:18:35.754000 | slack | message |  |  |
+| 2026-02-09 05:18:35.754000 | slack | message |  |  |
+| 2026-02-09 05:07:33.163000 | slack | message |  |  |
+| 2026-02-09 05:07:33.163000 | slack | message |  |  |
+| 2026-02-09 04:55:15.570000 | slack | message |  |  |
+| 2026-02-09 04:55:15.570000 | slack | message |  |  |
+| 2026-02-09 03:50:50 | github | commit |  |  |
+| 2026-02-09 03:50:43 | github | commit |  |  |
+| 2026-02-09 03:50:35 | github | commit |  |  |
+| 2026-02-09 03:50:28 | github | commit |  |  |
+| 2026-02-09 03:50:20 | github | commit |  |  |
+| 2026-02-09 03:50:12 | github | commit |  |  |
+| 2026-02-09 03:36:21.981000 | slack | message |  |  |
+| 2026-02-09 03:36:21.981000 | slack | message |  |  |
+| 2026-02-09 03:28:15 | github | commit |  |  |
+| 2026-02-09 03:14:07 | github | commit |  |  |
+| 2026-02-09 02:16:13 | github | commit |  |  |
+| 2026-02-09 02:16:13 | github | commit |  |  |
+| 2026-02-08 02:51:12 | github | commit |  |  |
+| 2026-02-08 02:49:14 | github | commit |  |  |
+| 2026-02-08 02:49:04 | github | commit |  |  |
+| 2026-02-08 02:48:57 | github | commit |  |  |
+| 2026-02-08 02:48:51 | github | commit |  |  |
+| 2026-02-07 17:30:08 | github | commit |  |  |
+| 2026-02-07 15:33:04 | github | commit |  |  |
+| 2026-02-07 15:08:16 | github | commit |  |  |
+| 2026-02-07 06:24:21 | github | commit |  |  |
+| 2026-02-07 06:14:01 | github | commit |  |  |
+| 2026-02-06 09:32:06 | github | commit |  |  |
+| 2026-02-06 09:30:59 | github | commit |  |  |
+| 2026-02-06 09:15:42 | github | commit |  |  |
+| 2026-02-06 09:10:32.976000 | slack | message |  |  |
+| 2026-02-06 09:10:32.976000 | slack | message |  |  |
+| 2026-02-06 09:09:22.622000 | slack | message |  |  |
+| 2026-02-06 09:09:22.622000 | slack | message |  |  |
+| 2026-02-06 09:08:48.575000 | slack | message |  |  |
+| 2026-02-06 09:08:48.575000 | slack | message |  |  |
+| 2026-02-06 09:02:34 | github | commit |  |  |
+| 2026-02-06 08:56:04 | github | commit |  |  |
+| 2026-02-06 08:55:44 | github | commit |  |  |
+| 2026-02-06 08:55:16 | github | review |  |  |
+| 2026-02-06 08:54:47 | github | review |  |  |
+| 2026-02-06 08:48:35 | github | commit |  |  |
+| 2026-02-06 08:44:49 | github | commit |  |  |
+| 2026-02-06 08:44:37 | github | commit |  |  |
+| 2026-02-06 07:10:25 | github | commit |  |  |
+| 2026-02-06 06:48:32.745000 | drive | 편집 (2회) | 편집 (2회) |  |
+| 2026-02-06 06:48:09 | github | commit |  |  |
+| 2026-02-06 05:49:17 | github | commit |  |  |
+| 2026-02-06 05:46:03 | github | commit |  |  |
+| 2026-02-06 04:49:36 | github | commit |  |  |
+| 2026-02-06 04:44:20 | github | commit |  |  |
+| 2026-02-06 02:49:40 | github | commit |  |  |
+| 2026-02-06 02:47:59 | github | commit |  |  |
+| 2026-02-06 02:46:27.737000 | slack | message |  |  |
+| 2026-02-06 02:46:27.737000 | slack | message |  |  |
+| 2026-02-06 02:39:04.659000 | slack | message |  |  |
+| 2026-02-06 02:39:04.659000 | slack | message |  |  |
+| 2026-02-06 02:29:49.974000 | slack | message |  |  |
+| 2026-02-06 02:29:49.974000 | slack | message |  |  |
+| 2026-02-06 02:19:51 | github | commit |  |  |
+| 2026-02-06 01:34:00 | github | commit |  |  |
+| 2026-02-05T04:06:00.000Z | notion | content_diff |  |  |
+| 2026-02-05 17:09:23 | github | commit |  |  |
+| 2026-02-05 16:53:54 | github | commit |  |  |
+| 2026-02-05 16:53:06 | github | commit |  |  |
+| 2026-02-05 16:42:13 | github | commit |  |  |
+| 2026-02-05 16:28:11.143000 | slack | message |  |  |
+| 2026-02-05 16:28:11.143000 | slack | message |  |  |
+| 2026-02-05 16:26:35.232000 | slack | message |  |  |
+| 2026-02-05 16:26:35.232000 | slack | message |  |  |
+| 2026-02-05 16:07:36 | github | commit |  |  |
+| 2026-02-05 15:53:17 | github | commit |  |  |
+| 2026-02-05 15:28:08.445000 | drive | 편집 (2회) | 편집 (2회) |  |
+| 2026-02-05 15:28:08.445000 | drive | 편집 (5회) | 편집 (5회) |  |
+| 2026-02-05 14:51:01.141000 | drive | 편집 (3회) | 편집 (3회) |  |
+| 2026-02-05 11:41:42 | github | commit |  |  |
+| 2026-02-05 11:18:29 | github | commit |  |  |
+| 2026-02-05 11:14:08 | github | commit |  |  |
+| 2026-02-05 11:11:09 | github | commit |  |  |
+| 2026-02-05 09:38:00 | github | commit |  |  |
+| 2026-02-05 08:25:29 | github | commit |  |  |
+| 2026-02-05 08:21:21 | github | commit |  |  |
+| 2026-02-05 08:12:44 | github | commit |  |  |
+| 2026-02-05 07:59:31 | github | commit |  |  |
+| 2026-02-05 04:53:24.399000 | drive | 편집 (10회) | 편집 (10회) |  |
+| 2026-02-05 04:37:09.062000 | slack | message |  |  |
+| 2026-02-05 04:37:09.062000 | slack | message |  |  |
+| 2026-02-05 04:27:05.309000 | slack | message |  |  |
+| 2026-02-05 04:27:05.309000 | slack | message |  |  |
+| 2026-02-05 04:26:49.926000 | slack | message |  |  |
+| 2026-02-05 04:26:49.926000 | slack | message |  |  |
+| 2026-02-05 04:16:56.895000 | drive | 이름 변경 | 이름 변경 |  |
+| 2026-02-05 04:13:12.065000 | slack | message |  |  |
+| 2026-02-05 04:13:12.065000 | slack | message |  |  |
+| 2026-02-05 04:12:51.091000 | slack | message |  |  |
+| 2026-02-05 04:12:51.091000 | slack | message |  |  |
+| 2026-02-05 04:10:08 | github | commit |  |  |
+| 2026-02-05 04:05:00 | notion | page |  | TRH platform: Backup & Recovery Guide |
+| 2026-02-05 04:04:10.052000 | slack | message |  |  |
+| 2026-02-05 04:04:10.052000 | slack | message |  |  |
+| 2026-02-05 03:55:14 | github | commit |  |  |
+| 2026-02-05 03:52:57 | github | commit |  |  |
+| 2026-02-04 23:51:42 | github | commit |  |  |
+| 2026-02-04 22:44:58 | github | commit |  |  |
+| 2026-02-04 22:20:32 | github | commit |  |  |
+| 2026-02-04 22:03:06 | github | commit |  |  |
+| 2026-02-04 21:57:00 | github | commit |  |  |
+| 2026-02-04 21:50:16 | github | commit |  |  |
+| 2026-02-04 13:47:04 | github | commit |  |  |
+| 2026-02-04 13:37:28 | github | commit |  |  |
+| 2026-02-04 11:17:54 | github | commit |  |  |
+| 2026-02-04 10:59:55 | github | review |  |  |
+| 2026-02-04 10:53:36 | github | review |  |  |
+| 2026-02-04 10:45:02 | github | review |  |  |
+| 2026-02-04 10:42:33 | github | review |  |  |
+| 2026-02-04 10:28:38 | github | commit |  |  |
+| 2026-02-04 10:21:53.915000 | slack | message |  |  |
+| 2026-02-04 10:21:53.915000 | slack | message |  |  |
+| 2026-02-04 10:19:55.715000 | slack | message |  |  |
+| 2026-02-04 10:19:55.715000 | slack | message |  |  |
+| 2026-02-04 09:55:57.621000 | slack | message |  |  |
+| 2026-02-04 09:55:57.621000 | slack | message |  |  |
+| 2026-02-04 09:48:55 | github | commit |  |  |
+| 2026-02-04 08:48:33.777000 | slack | message |  |  |
+| 2026-02-04 08:48:33.777000 | slack | message |  |  |
+| 2026-02-04 08:38:17 | github | pull_request |  | Feat: Support mainnet |
+| 2026-02-04 08:33:03 | github | commit |  |  |
+| 2026-02-04 08:30:13 | github | pull_request |  | Feat: Support mainnet |
+| 2026-02-04 08:23:41 | github | commit |  |  |
+| 2026-02-04 07:46:17.266000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 07:46:13.565000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 07:46:11.019000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 07:46:07.742000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 07:46:06.577000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 07:46:04.837000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 07:46:02.019000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 07:45:59.079000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 07:45:56.726000 | drive | sync_item_content | sync_item_content |  |
+| 2026-02-04 06:36:08 | github | commit |  |  |
+| 2026-02-04 06:35:35 | github | commit |  |  |
+| 2026-02-04 06:35:10 | github | commit |  |  |
+| 2026-02-04 06:14:39 | github | commit |  |  |
+| 2026-02-04 06:13:21 | github | commit |  |  |
+| 2026-02-04 06:12:40 | github | commit |  |  |
+| 2026-02-04 06:12:15 | github | commit |  |  |
+| 2026-02-04 06:06:44 | github | commit |  |  |
+| 2026-02-04 06:01:19 | github | commit |  |  |
+| 2026-02-04 05:49:03 | github | commit |  |  |
+| 2026-02-04 05:47:33 | github | commit |  |  |
+| 2026-02-04 05:34:17 | github | commit |  |  |
+| 2026-02-04 05:32:13 | github | commit |  |  |
+| 2026-02-04 05:02:10 | github | pull_request |  | Feat: Support mainnet |
+| 2026-02-04 05:00:35 | github | commit |  |  |
+| 2026-02-04 05:00:15 | github | commit |  |  |
+| 2026-02-04 04:59:49 | github | commit |  |  |
+| 2026-02-04 04:38:50.842000 | slack | message |  |  |
+| 2026-02-04 04:38:50.842000 | slack | message |  |  |
+| 2026-02-04 02:27:42.698000 | slack | message |  |  |
+| 2026-02-04 02:27:42.698000 | slack | message |  |  |
+| 2026-02-03T05:03:00.000Z | notion | content_diff |  |  |
+| 2026-02-03 12:29:39 | github | commit |  |  |
+| 2026-02-03 05:54:19.132000 | slack | message |  |  |
+| 2026-02-03 05:54:19.132000 | slack | message |  |  |
+| 2026-02-02 15:53:44 | github | commit |  |  |
+| 2026-02-02 14:39:17 | github | commit |  |  |
+| 2026-02-02 14:12:01 | github | commit |  |  |
+| 2026-02-02 14:11:46 | github | commit |  |  |
+| 2026-02-02 09:52:03 | github | commit |  |  |
+| 2026-02-02 09:51:40 | github | commit |  |  |
+| 2026-02-02 08:43:21.424000 | slack | message |  |  |
+| 2026-02-02 08:43:21.424000 | slack | message |  |  |
+| 2026-02-02 08:39:02 | github | commit |  |  |
+| 2026-02-02 08:38:30 | github | commit |  |  |
+| 2026-02-02 08:16:24 | github | commit |  |  |
+| 2026-02-02 07:49:15 | github | commit |  |  |
+| 2026-02-02 05:57:11 | github | commit |  |  |
+| 2026-02-02 04:57:59 | github | commit |  |  |
+| 2026-02-02 01:51:25.679000 | slack | message |  |  |
+| 2026-02-02 01:51:25.679000 | slack | message |  |  |
+| 2026-02-02 01:39:58.098000 | slack | message |  |  |
+| 2026-02-02 01:39:58.098000 | slack | message |  |  |
+| 2026-02-02 01:34:54.706000 | slack | message |  |  |
+| 2026-02-02 01:34:54.706000 | slack | message |  |  |
+
+## Performance Analysis
+
+- Total activity records: 239
+- Active days: 6
+- Avg records per active day: 39.83
+- Activity score (weighted): 594
+
+**By source**
+- github: 163
+- slack: 58
+- drive: 15
+- notion: 3
+
+**Top activity types**
+- commit: 154
+- message: 58
+- sync_item_content: 9
+- review: 6
+- pull_request: 3
+
+**Activity by date**
+- 2026-02-02: 8
+- 2026-02-03: 2
+- 2026-02-04: 21
+- 2026-02-05: 21
+- 2026-02-06: 13
+- 2026-02-09: 8
+
+**Notes**
+- Meeting participation metrics are not included in this dataset.
+
+## GitHub Activity Summary
+
+**By type**
+- commit: 154
+- review: 6
+- pull_request: 3
+
+**Top repositories**
+- SentinAI: 92
+- trh-platform-ui: 31
+- trh-sdk: 19
+- trh-backend: 16
+- tokamak-thanos: 4
+- smart-contract-audit-tool: 1
+
+**Recent GitHub records (latest first)**
+| timestamp | type | repository | pr_title | message | additions | deletions | review_state | state | pr_number | sha |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2026-02-10 06:01:26 | commit | SentinAI |  | build: exclude next-env.d.ts from git (auto-generated by Next.js)  - next-env.d.ts: Remove from tracking (auto-generated by Next.js build) - .gitignore: Add next-env.d.ts to exclude list  This file is | 1.0 | 6.0 |  |  |  | 0b071ad1 |
+| 2026-02-10 05:47:03 | commit | SentinAI |  | docs: archive old handoff doc and add Proposal 7 verification report (P2 optional)  - docs/archive/: Create archive directory for historical documents - HANDOFF.md → docs/archive/HANDOFF-proposal-1-ol | 429.0 | 0.0 |  |  |  | e2832dda |
+| 2026-02-10 05:42:29 | commit | SentinAI |  | docs: add comprehensive feature and architecture documentation (P1)  - FEATURES.md: Complete feature inventory   - 7/9 Proposals with implementation details   - 24 core modules (7,437 LOC) with line c | 1101.0 | 0.0 |  |  |  | 6a34fe7d |
+| 2026-02-10 05:40:30 | commit | SentinAI |  | docs: update documentation to reflect current implementation status (P0 organization)  - docs/README.md: Update Proposal 2-7 status from "명세 완료" to "구현 완료"   - Fix paths: proposals/ → done/ for all 7  | 104.0 | 387.0 |  |  |  | fa217aa6 |
+| 2026-02-10 05:13:53 | commit | SentinAI |  | docs: update testing-guide and add unit-test-coverage-report  - Updated testing-guide.md with latest test statistics   - 87 → 541 tests (+522%)   - 5 → 23 test files (+360%)   - 23% → ~51% overall cov | 641.0 | 25.0 |  |  |  | b1ac3116 |
+| 2026-02-10 05:10:24 | commit | SentinAI |  | test: complete unit tests for ai-analyzer, log-ingester, daily-report-generator  - Added 50 unit tests across 3 modules - ai-analyzer: 12 tests for log chunk analysis with AI provider - log-ingester:  | 826.0 | 0.0 |  |  |  | 7c2f75ec |
+| 2026-02-10 05:03:52 | commit | SentinAI |  | test: add 3 core unit test modules (93 tests, 496 cumulative)  - ai-response-parser.test.ts: 37 tests   - JSON extraction from markdown/plain text   - Robust brace-depth matching for nested objects    | 1198.0 | 0.0 |  |  |  | 79c0d47f |
+| 2026-02-10 04:58:30 | commit | SentinAI |  | test: add scheduler and redis-store unit tests (80 tests total, 403 cumulative)  - scheduler.test.ts: 27 tests   - Initialization idempotency, status reporting   - Task stopping and cleanup   - Error  | 1174.0 | 0.0 |  |  |  | e307001b |
+| 2026-02-10 04:54:19 | commit | SentinAI |  | test: add daily-accumulator unit tests (36 tests, 70% coverage)  - Snapshot capture with dedup guard (4 min gap) and max limit (288) - Hourly summary aggregation (cpu, txPool, gasRatio, blockInterval) | 675.0 | 0.0 |  |  |  | 90e13912 |
+| 2026-02-10 04:52:04 | commit | SentinAI |  | test: add alert-dispatcher unit tests (18 tests, ~70% coverage)  - Slack message formatting with Block Kit - Severity and anomaly type emoji handling - Multiple anomaly aggregation in alerts - Current | 391.0 | 0.0 |  |  |  | a055cb62 |
+| 2026-02-10 04:50:49 | commit | SentinAI |  | test: add usage-tracker unit tests (19 tests, ~70% coverage)  - Usage recording: record vCPU and CPU utilization - Stress test filtering: exclude 8 vCPU simulation data - CPU utilization clamping: enf | 304.0 | 0.0 |  |  |  | acc8df67 |
+| 2026-02-10 04:38:51 | commit | SentinAI |  | test: add anomaly-ai-analyzer unit tests (16 tests, ~75% coverage)  - Rate limiting enforcement: 1-minute cooldown between calls - Analysis caching: identical anomalies return cached results - Cache T | 447.0 | 0.0 |  |  |  | abb7f82f |
+| 2026-02-10 04:37:36 | commit | SentinAI |  | test: add cost-optimizer unit tests (23 tests, ~70% coverage)  - Monthly cost calculation: 1/2/4 vCPU pricing model - Baseline 4 vCPU monthly cost (~$166) - Linear scaling validation: cost doubles wit | 303.0 | 0.0 |  |  |  | 8fbbac25 |
+| 2026-02-10 04:33:52 | commit | SentinAI |  | refactor: simplify dashboard UI after NLOps integration  NLOps 채팅으로 RCA, 스케일링, 비용 분석이 가능해져 중복 UI를 정리.  - Remove RCA panel (CHECK HEALTH button, RCAResultDisplay component) - Simplify Scaling Forecast  | 109.0 | 1672.0 |  |  |  | 7bae1252 |
+| 2026-02-10 03:48:00 | commit | SentinAI |  | docs: update testing-guide with Phase 1 Unit Test Coverage results  - Updated implementation status: P5-P7 marked complete (✅ instead of 📋) - Added new section 1.2: Unit Test Coverage achievement (23% | 386.0 | 0.0 |  |  |  | 470183d3 |
+
+## Slack Activity Summary
+
+- Total messages: 58
+
+**Top channels**
+- project_trh: 50
+- tokamak-dev: 6
+- ai-tokamak-network: 2
+
+**Recent messages (latest first)**
+| timestamp | channel | text | reactions_count | has_thread |
+|---|---|---|---|---|
+| 2026-02-09 05:18:35.754000 | project_trh | Sure <@U0A0PUBKLJC> Please let us know the progress of this job. And <@U08065B1ZQF> please support him for smooth DRB integration work on TRH platform. | 1.0 | True |
+| 2026-02-09 05:18:35.754000 | project_trh | Sure <@U0A0PUBKLJC> Please let us know the progress of this job. And <@U08065B1ZQF> please support him for smooth DRB integration work on TRH platform. | 1.0 | True |
+| 2026-02-09 05:07:33.163000 | project_trh | <@U079GNX54MT> <@U0A0PUBKLJC> Please check out the related materials and let us know the timeline you think. Thanks. | 1.0 | True |
+| 2026-02-09 05:07:33.163000 | project_trh | <@U079GNX54MT> <@U0A0PUBKLJC> Please check out the related materials and let us know the timeline you think. Thanks. | 1.0 | True |
+| 2026-02-09 04:55:15.570000 | tokamak-dev | Thanks for sharing <@U04E2KL62RZ>! I think it is a brilliant concept and have a huge potential. The autonomous agents that truly understand context!! There will be no more passive income. | 0.0 | True |
+| 2026-02-09 04:55:15.570000 | tokamak-dev | Thanks for sharing <@U04E2KL62RZ>! I think it is a brilliant concept and have a huge potential. The autonomous agents that truly understand context!! There will be no more passive income. | 0.0 | True |
+| 2026-02-09 03:36:21.981000 | project_trh | <!channel>  *February 2026 Key Initiatives - Updated Assignment*  We've finalized our ownership structure for the four core objectives this month: • *Tokamak Rollup Hub - Mainnet Launch*: Finalize platform prep and run a 1-week controlled mainnet test. (<@U07JTFTUL66>) • *Tokamak Rollup Hub - SDK/Platform*: Upgrade the Thanos stack with FPS. (<@U079GNX54MT>) • *DRB*: Complete platform integration and trigger the Alpha launch (<@U0A0PUBKLJC>). • *Cross Trade*: Finish internal QA, complete documentation, and announce the Testnet release. (<@U07D48B0XT5>) Please confirm and reach out if you have any questions about your assigned scope. Thanks!:bows: | 1.0 | True |
+| 2026-02-09 03:36:21.981000 | project_trh | <!channel>  *February 2026 Key Initiatives - Updated Assignment*  We've finalized our ownership structure for the four core objectives this month: • *Tokamak Rollup Hub - Mainnet Launch*: Finalize platform prep and run a 1-week controlled mainnet test. (<@U07JTFTUL66>) • *Tokamak Rollup Hub - SDK/Platform*: Upgrade the Thanos stack with FPS. (<@U079GNX54MT>) • *DRB*: Complete platform integration and trigger the Alpha launch (<@U0A0PUBKLJC>). • *Cross Trade*: Finish internal QA, complete documentation, and announce the Testnet release. (<@U07D48B0XT5>) Please confirm and reach out if you have any questions about your assigned scope. Thanks!:bows: | 1.0 | True |
+| 2026-02-06 09:10:32.976000 | project_trh | Sorry could you check <https://github.com/tokamak-network/trh-sdk/pull/168/it> as well? It is strongly have relation with above PR. Thanks. | 1.0 | True |
+| 2026-02-06 09:10:32.976000 | project_trh | Sorry could you check <https://github.com/tokamak-network/trh-sdk/pull/168/it> as well? It is strongly have relation with above PR. Thanks. | 1.0 | True |
+| 2026-02-06 09:09:22.622000 | project_trh | Sorry. It's PR for trh-backend. Missed. | 0.0 | True |
+| 2026-02-06 09:09:22.622000 | project_trh | Sorry. It's PR for trh-backend. Missed. | 0.0 | True |
+| 2026-02-06 09:08:48.575000 | project_trh | Hi <@U07D48B0XT5> Could you check the status of <https://github.com/tokamak-network/trh-backend/pull/38/this PR on trh-sdk>? It is related Cross-Trade and I want you check if it can be merged main branch or not. Thanks. | 0.0 | True |
+| 2026-02-06 09:08:48.575000 | project_trh | Hi <@U07D48B0XT5> Could you check the status of <https://github.com/tokamak-network/trh-backend/pull/38/this PR on trh-sdk>? It is related Cross-Trade and I want you check if it can be merged main branch or not. Thanks. | 0.0 | True |
+| 2026-02-06 02:46:27.737000 | project_trh | Thanks <@U079GNX54MT> Cool. Please start it by your sub project (track B) It would be great to complete phase 1 ASAP. | 1.0 | True |
+
+## Notion Activity Summary
+
+**By type**
+- content_diff: 2
+- page: 1
+
+**Top pages**
+- TRH platform: Backup & Recovery Guide: 1
+- Thanos L2 Shutdown helper : 1
+
+**Recent Notion records (latest first)**
+| timestamp | type | page_title | added_count | deleted_count | modified_count |
+|---|---|---|---|---|---|
+| 2026-02-05T04:06:00.000Z | content_diff | TRH platform: Backup & Recovery Guide | 25.0 | 0.0 | 1.0 |
+| 2026-02-05 04:05:00 | page |  |  |  |  |
+| 2026-02-03T05:03:00.000Z | content_diff | Thanos L2 Shutdown helper  | 1.0 | 0.0 | 2.0 |
+
+## Drive Activity Summary
+
+**Create/Edit activity types**
+- 편집 (2회): 2
+- 편집 (5회): 1
+- 편집 (3회): 1
+
+**Top files**
+- 2. Weekly DEV Performance(Tokamak Network)_2026 Feb: 3
+- Mainnet Preparation operated by TRH_202602: 1
+
+**Recent Drive records (latest first)**
+| timestamp | type | file_name | file_type | action |
+|---|---|---|---|---|
+| 2026-02-06 06:48:32.745000 | 편집 (2회) | Mainnet Preparation operated by TRH_202602 | 프레젠테이션 | 편집 (2회) |
+| 2026-02-05 15:28:08.445000 | 편집 (2회) | 2. Weekly DEV Performance(Tokamak Network)_2026 Feb | 스프레드시트 | 편집 (2회) |
+| 2026-02-05 15:28:08.445000 | 편집 (5회) | 2. Weekly DEV Performance(Tokamak Network)_2026 Feb | 스프레드시트 | 편집 (5회) |
+| 2026-02-05 14:51:01.141000 | 편집 (3회) | 2. Weekly DEV Performance(Tokamak Network)_2026 Feb | 스프레드시트 | 편집 (3회) |
