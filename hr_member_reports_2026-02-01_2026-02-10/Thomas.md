@@ -1,5 +1,12 @@
 # HR Activity Report - Thomas
 
+## Final Performance Summary
+Thomas logged 453 records, concentrated in notion (211), github (162). GitHub contributions include 0 pull request(s) and 162 commit(s), showing steady engineering output. With 14 Slack message(s), communication and coordination appear to be a consistent part of their workflow. Documentation/ops activity is evident via 4 Drive edit event(s), Drive access/file operations, 211 Notion update(s). Overall strength this period is documentation and planning discipline.
+
+## Current Work Focus
+Recent GitHub work centers on tokamak-dao-v2 and dao-action-builder, with changes such as feat: add staker lookup UI with filter, results table, and CSV export - StakerFilter: date range pi…; feat: add staker lookup API with GraphQL queries and mock data - Types: StakerFilter, StakerResult,…. Slack activity is concentrated in project-eco and track-b-demo, indicating active coordination in those threads. Meeting analysis lists Thomas as a top speaker, pointing to active meeting involvement.
+
+
 Records: 453
 
 ## By Source
@@ -254,60 +261,6 @@ Records: 453
 | 2026-02-05 06:39:17 | github | commit |  |  |
 | 2026-02-05 05:42:10.267000 | drive | 편집 (5회) | 편집 (5회) |  |
 | 2026-02-05 05:37:43.351000 | drive | 편집 (2회) | 편집 (2회) |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 문서 공개 설정 변경 | 문서 공개 설정 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | change_owner | change_owner |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 이동 | 이동 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:37:42.513000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 이동 | 이동 |  |
-| 2026-02-05 05:17:42.502000 | drive | change_owner | change_owner |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 문서 공개 설정 변경 | 문서 공개 설정 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 05:17:42.502000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
 | 2026-02-05 05:12:22 | github | commit |  |  |
 | 2026-02-05 05:12:19 | github | commit |  |  |
 | 2026-02-05 05:12:15 | github | commit |  |  |
@@ -318,8 +271,6 @@ Records: 453
 | 2026-02-05 03:38:14 | github | commit |  |  |
 | 2026-02-05 03:35:47 | github | commit |  |  |
 | 2026-02-05 03:34:00 | notion | page |  | DEMO —  |
-| 2026-02-05 03:20:18.622000 | drive | search | search |  |
-| 2026-02-05 03:20:18.472000 | drive | search | search |  |
 | 2026-02-05 02:57:26 | github | commit |  |  |
 | 2026-02-05 02:53:52 | github | commit |  |  |
 | 2026-02-05 02:47:00 | notion | page |  | Issue |
@@ -360,9 +311,6 @@ Records: 453
 | 2026-02-04 09:11:22 | github | commit |  |  |
 | 2026-02-04 09:11:15 | github | commit |  |  |
 | 2026-02-04 09:11:10 | github | commit |  |  |
-| 2026-02-04 08:53:03.572000 | drive | search | search |  |
-| 2026-02-04 08:52:53.153000 | drive | search | search |  |
-| 2026-02-04 08:52:50.508000 | drive | search | search |  |
 | 2026-02-04 08:39:39 | github | commit |  |  |
 | 2026-02-04 08:39:34 | github | commit |  |  |
 | 2026-02-04 08:39:27 | github | commit |  |  |
@@ -425,7 +373,6 @@ Records: 453
 | 2026-02-03 03:59:18 | github | commit |  |  |
 | 2026-02-03 03:57:09 | github | commit |  |  |
 | 2026-02-03 03:54:45 | github | commit |  |  |
-| 2026-02-03 03:45:30.364000 | drive | search | search |  |
 | 2026-02-03 03:44:32 | github | commit |  |  |
 | 2026-02-03 03:44:06 | github | commit |  |  |
 | 2026-02-03 03:40:26 | github | commit |  |  |
@@ -472,9 +419,7 @@ Records: 453
 | 2026-02-02 04:23:41 | github | commit |  |  |
 | 2026-02-02 04:21:05 | github | commit |  |  |
 | 2026-02-02 04:19:20 | github | commit |  |  |
-| 2026-02-02 04:01:05.356000 | drive | search | search |  |
 | 2026-02-02 03:32:56.766000 | drive | 편집 (2회) | 편집 (2회) |  |
-| 2026-02-02 03:32:10.369000 | drive | search | search |  |
 | 2026-02-01T10:01:00.000Z | notion | content_diff |  |  |
 | 2026-02-01T09:32:00.000Z | notion | content_diff |  |  |
 | 2026-02-01 14:55:04.499000 | drive | 편집 (46회) | 편집 (46회) |  |

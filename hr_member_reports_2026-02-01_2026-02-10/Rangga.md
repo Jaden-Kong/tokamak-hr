@@ -1,5 +1,12 @@
 # HR Activity Report - Rangga
 
+## Final Performance Summary
+Rangga logged 22 records, concentrated in notion (19), slack (2). With 2 Slack message(s), communication and coordination appear to be a consistent part of their workflow. Documentation/ops activity is evident via 1 Drive edit event(s), 19 Notion update(s). Overall strength this period is documentation and planning discipline.
+
+## Current Work Focus
+Slack activity is concentrated in tokamak-cm, indicating active coordination in those threads. Meeting participation is not explicitly recorded for this member in the meeting dataset.
+
+
 Records: 22
 
 ## By Source

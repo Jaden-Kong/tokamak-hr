@@ -1,5 +1,12 @@
 # HR Activity Report - Singh
 
+## Final Performance Summary
+Singh logged 129 records, concentrated in drive (69), slack (32). GitHub contributions include 2 pull request(s) (e.g., feat: integrate chatbot service into platform deployment; Feat: Created chatbot on UI to help user in deploy and manage L2 rollups) and 24 commit(s), showing delivery on engineering work. With 32 Slack message(s), communication and coordination appear to be a consistent part of their workflow. Documentation/ops activity is evident via 2 Drive edit event(s), Drive access/file operations. Overall strength this period is documentation hygiene and operational follow-through.
+
+## Current Work Focus
+Recent GitHub work centers on trh-platform-ui and tokamak-architecht-bot, with changes such as feat: Updated logic for fps integration; feat: Added updates for fps configuration integration. Slack activity is concentrated in project_trh and tokamak-dev, indicating active coordination in those threads. Meeting analysis lists Singh as a top speaker, pointing to active meeting involvement.
+
+
 Records: 129
 
 ## By Source
@@ -42,32 +49,19 @@ Records: 129
 | 2026-02-06 12:49:33 | github | commit |  |  |
 | 2026-02-06 12:47:47 | github | commit |  |  |
 | 2026-02-06 12:46:39 | github | commit |  |  |
-| 2026-02-06 11:54:47.925000 | drive | access_item_content | access_item_content |  |
-| 2026-02-06 11:54:47.758000 | drive | access_item_content | access_item_content |  |
-| 2026-02-06 07:53:01.730000 | drive | access_item_content | access_item_content |  |
-| 2026-02-06 07:53:01.356000 | drive | access_item_content | access_item_content |  |
 | 2026-02-06 06:27:33 | github | review |  |  |
 | 2026-02-05 14:36:02 | github | commit |  |  |
 | 2026-02-05 11:56:05.244000 | slack | message |  |  |
 | 2026-02-05 11:56:05.244000 | slack | message |  |  |
 | 2026-02-05 08:17:47 | github | review |  |  |
-| 2026-02-05 07:57:49.739000 | drive | sync_item_content | sync_item_content |  |
-| 2026-02-05 07:57:48.694000 | drive | sync_item_content | sync_item_content |  |
-| 2026-02-05 07:57:40.862000 | drive | sync_item_content | sync_item_content |  |
 | 2026-02-05 07:52:27.867000 | slack | message |  |  |
 | 2026-02-05 07:52:27.867000 | slack | message |  |  |
 | 2026-02-05 06:13:38 | github | commit |  |  |
-| 2026-02-05 05:26:42.764000 | drive | access_item_content | access_item_content |  |
-| 2026-02-05 05:26:26.654000 | drive | access_item_content | access_item_content |  |
 | 2026-02-05 00:05:48 | github | commit |  |  |
-| 2026-02-04 21:11:38.618000 | drive | access_item_content | access_item_content |  |
-| 2026-02-04 21:11:38.454000 | drive | access_item_content | access_item_content |  |
 | 2026-02-04 20:51:15 | github | commit |  |  |
 | 2026-02-04 15:26:14 | github | commit |  |  |
 | 2026-02-03 18:45:45.154000 | slack | message |  |  |
 | 2026-02-03 18:45:45.154000 | slack | message |  |  |
-| 2026-02-03 18:06:16.350000 | drive | access_item_content | access_item_content |  |
-| 2026-02-03 18:06:16.296000 | drive | access_item_content | access_item_content |  |
 | 2026-02-03 17:17:22.117000 | slack | message |  |  |
 | 2026-02-03 17:17:22.117000 | slack | message |  |  |
 | 2026-02-03 16:45:37.083000 | slack | message |  |  |
@@ -89,7 +83,6 @@ Records: 129
 | 2026-02-03 06:58:33.946000 | slack | message |  |  |
 | 2026-02-03 06:58:30.219000 | slack | message |  |  |
 | 2026-02-03 06:58:30.219000 | slack | message |  |  |
-| 2026-02-03 06:17:41.328000 | drive | access_item_content | access_item_content |  |
 | 2026-02-02 10:33:33 | github | commit |  |  |
 | 2026-02-02 10:26:56 | github | commit |  |  |
 | 2026-02-02 10:24:14 | github | commit |  |  |
@@ -97,62 +90,9 @@ Records: 129
 | 2026-02-02 09:26:53 | github | commit |  |  |
 | 2026-02-02 09:25:29 | github | commit |  |  |
 | 2026-02-02 08:11:23.602000 | drive | 편집 (2회) | 편집 (2회) |  |
-| 2026-02-02 08:11:22.384000 | drive | change_owner | change_owner |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 문서 공개 설정 변경 | 문서 공개 설정 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 08:11:22.384000 | drive | 이동 | 이동 |  |
-| 2026-02-02 08:11:22.384000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
 | 2026-02-02 08:08:51.514000 | drive | 편집 (5회) | 편집 (5회) |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 이동 | 이동 |  |
-| 2026-02-02 07:11:21.180000 | drive | change_owner | change_owner |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 문서 공개 설정 변경 | 문서 공개 설정 변경 |  |
-| 2026-02-02 07:11:21.180000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
 | 2026-02-02 06:55:27.897000 | slack | message |  |  |
 | 2026-02-02 06:55:27.897000 | slack | message |  |  |
-| 2026-02-02 05:18:45.625000 | drive | access_item_content | access_item_content |  |
 
 ## Performance Analysis
 

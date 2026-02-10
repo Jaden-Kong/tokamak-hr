@@ -1,5 +1,12 @@
 # HR Activity Report - Harvey
 
+## Final Performance Summary
+Harvey logged 228 records, concentrated in drive (143), github (69). GitHub contributions include 0 pull request(s) and 69 commit(s), showing steady engineering output. With 16 Slack message(s), communication and coordination appear to be a consistent part of their workflow. Documentation/ops activity is evident via 15 Drive edit event(s), Drive access/file operations. Overall strength this period is documentation hygiene and operational follow-through.
+
+## Current Work Focus
+Recent GitHub work centers on ton-staking-v2 and tokamak-ai-agent, with changes such as Front Demo Update Use of Tokamak AI Agent; Store ABI JSON for Stepper event matching. Slack activity is concentrated in project-eco and tokamak-dev, indicating active coordination in those threads. Meeting analysis mentions Harvey in sessions like ProjectECO_Discuss about delegate staking_Jason,Zena,Harvey - 2026/02/02 13:59 KST; DAO Demo_Thomas, Kevin, Jason, Zena, Harvey - 2026/02/05 13:58 KST.
+
+
 Records: 228
 
 ## By Source
@@ -40,125 +47,14 @@ Records: 228
 | 2026-02-09 16:26:26 | github | commit |  |  |
 | 2026-02-09 16:14:39 | github | commit |  |  |
 | 2026-02-09 16:12:02 | github | commit |  |  |
-| 2026-02-09 12:49:28.016000 | drive | search | search |  |
-| 2026-02-09 12:49:27.385000 | drive | search | search |  |
-| 2026-02-09 12:49:27.306000 | drive | search | search |  |
-| 2026-02-09 12:49:02.029000 | drive | search | search |  |
-| 2026-02-09 12:49:01.332000 | drive | search | search |  |
-| 2026-02-09 12:49:01.141000 | drive | search | search |  |
-| 2026-02-09 12:48:06.334000 | drive | search | search |  |
-| 2026-02-09 12:48:05.630000 | drive | search | search |  |
-| 2026-02-09 12:48:05.554000 | drive | search | search |  |
-| 2026-02-09 12:47:44.064000 | drive | search | search |  |
-| 2026-02-09 12:47:28.019000 | drive | search | search |  |
-| 2026-02-09 12:47:27.318000 | drive | search | search |  |
-| 2026-02-09 12:47:27.317000 | drive | search | search |  |
-| 2026-02-09 12:46:47.289000 | drive | search | search |  |
-| 2026-02-09 12:46:46.592000 | drive | search | search |  |
-| 2026-02-09 12:46:46.556000 | drive | search | search |  |
-| 2026-02-09 12:46:38.312000 | drive | search | search |  |
-| 2026-02-09 12:46:37.865000 | drive | search | search |  |
-| 2026-02-09 12:46:37.694000 | drive | search | search |  |
-| 2026-02-09 12:45:30.559000 | drive | search | search |  |
-| 2026-02-09 12:45:30.115000 | drive | search | search |  |
-| 2026-02-09 12:45:29.935000 | drive | search | search |  |
-| 2026-02-09 12:45:21.950000 | drive | search | search |  |
-| 2026-02-09 12:45:21.496000 | drive | search | search |  |
-| 2026-02-09 12:45:21.304000 | drive | search | search |  |
-| 2026-02-09 12:45:14.951000 | drive | search | search |  |
-| 2026-02-09 12:45:14.037000 | drive | search | search |  |
-| 2026-02-09 12:45:13.966000 | drive | search | search |  |
-| 2026-02-09 12:44:57.944000 | drive | search | search |  |
-| 2026-02-09 12:44:57.088000 | drive | search | search |  |
-| 2026-02-09 12:44:57.083000 | drive | search | search |  |
-| 2026-02-09 12:44:25.811000 | drive | search | search |  |
-| 2026-02-09 12:44:10.783000 | drive | search | search |  |
-| 2026-02-09 12:44:09.946000 | drive | search | search |  |
-| 2026-02-09 12:44:09.901000 | drive | search | search |  |
-| 2026-02-09 12:43:53.303000 | drive | search | search |  |
-| 2026-02-09 12:43:52.627000 | drive | search | search |  |
-| 2026-02-09 12:43:52.612000 | drive | search | search |  |
-| 2026-02-09 12:43:39.512000 | drive | search | search |  |
-| 2026-02-09 12:43:38.746000 | drive | search | search |  |
-| 2026-02-09 12:43:38.734000 | drive | search | search |  |
-| 2026-02-09 12:43:25.731000 | drive | search | search |  |
-| 2026-02-09 12:43:25.248000 | drive | search | search |  |
-| 2026-02-09 12:43:25.047000 | drive | search | search |  |
-| 2026-02-09 12:43:16.939000 | drive | search | search |  |
-| 2026-02-09 12:43:16.311000 | drive | search | search |  |
-| 2026-02-09 12:43:16.242000 | drive | search | search |  |
-| 2026-02-09 12:43:09.689000 | drive | search | search |  |
-| 2026-02-09 12:43:08.859000 | drive | search | search |  |
-| 2026-02-09 12:43:08.849000 | drive | search | search |  |
-| 2026-02-09 12:42:51.406000 | drive | search | search |  |
-| 2026-02-09 12:42:50.705000 | drive | search | search |  |
-| 2026-02-09 12:42:50.556000 | drive | search | search |  |
-| 2026-02-09 12:42:44.338000 | drive | search | search |  |
-| 2026-02-09 12:42:43.688000 | drive | search | search |  |
-| 2026-02-09 12:42:43.650000 | drive | search | search |  |
-| 2026-02-09 12:42:34.912000 | drive | search | search |  |
-| 2026-02-09 12:42:34.170000 | drive | search | search |  |
-| 2026-02-09 12:42:34.165000 | drive | search | search |  |
-| 2026-02-09 12:42:25.336000 | drive | search | search |  |
-| 2026-02-09 12:42:24.645000 | drive | search | search |  |
-| 2026-02-09 12:42:24.632000 | drive | search | search |  |
-| 2026-02-09 12:42:05.881000 | drive | search | search |  |
-| 2026-02-09 12:42:05.103000 | drive | search | search |  |
-| 2026-02-09 12:42:04.992000 | drive | search | search |  |
 | 2026-02-09 12:41:58.946000 | drive | 편집 (1회) | 편집 (1회) |  |
-| 2026-02-09 12:41:27.256000 | drive | search | search |  |
-| 2026-02-09 12:41:26.503000 | drive | search | search |  |
-| 2026-02-09 12:41:26.500000 | drive | search | search |  |
-| 2026-02-09 12:41:14.592000 | drive | search | search |  |
-| 2026-02-09 12:41:13.941000 | drive | search | search |  |
-| 2026-02-09 12:41:13.915000 | drive | search | search |  |
-| 2026-02-09 12:37:47.773000 | drive | search | search |  |
-| 2026-02-09 12:37:47.028000 | drive | search | search |  |
-| 2026-02-09 12:37:46.990000 | drive | search | search |  |
-| 2026-02-09 12:37:23.265000 | drive | search | search |  |
-| 2026-02-09 12:37:22.574000 | drive | search | search |  |
-| 2026-02-09 12:37:22.541000 | drive | search | search |  |
-| 2026-02-09 12:37:03.680000 | drive | search | search |  |
-| 2026-02-09 12:37:03.012000 | drive | search | search |  |
-| 2026-02-09 12:37:02.998000 | drive | search | search |  |
-| 2026-02-09 12:36:47.383000 | drive | search | search |  |
-| 2026-02-09 12:36:47.059000 | drive | search | search |  |
-| 2026-02-09 12:36:46.623000 | drive | search | search |  |
-| 2026-02-09 12:36:26.013000 | drive | search | search |  |
-| 2026-02-09 12:36:25.146000 | drive | search | search |  |
-| 2026-02-09 12:36:25.098000 | drive | search | search |  |
-| 2026-02-09 12:36:24.415000 | drive | search | search |  |
-| 2026-02-09 12:36:23.882000 | drive | search | search |  |
-| 2026-02-09 12:36:23.731000 | drive | search | search |  |
-| 2026-02-09 12:36:17.367000 | drive | search | search |  |
-| 2026-02-09 12:36:16.525000 | drive | search | search |  |
-| 2026-02-09 12:36:16.473000 | drive | search | search |  |
-| 2026-02-09 12:33:41.388000 | drive | search | search |  |
-| 2026-02-09 12:33:40.476000 | drive | search | search |  |
-| 2026-02-09 12:33:40.418000 | drive | search | search |  |
 | 2026-02-09 11:05:18 | github | commit |  |  |
 | 2026-02-09 08:39:29 | github | commit |  |  |
 | 2026-02-09 06:48:50 | github | commit |  |  |
-| 2026-02-09 04:22:18.765000 | drive | 업로드 | 업로드 |  |
-| 2026-02-09 04:22:18.765000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-09 04:22:18.765000 | drive | 폴더에 추가 | 폴더에 추가 |  |
 | 2026-02-09 04:22:18.765000 | drive | 편집 (1회) | 편집 (1회) |  |
-| 2026-02-09 04:22:08.986000 | drive | 업로드 | 업로드 |  |
 | 2026-02-09 04:22:08.986000 | drive | 편집 (1회) | 편집 (1회) |  |
-| 2026-02-09 04:22:08.986000 | drive | 폴더에 추가 | 폴더에 추가 |  |
-| 2026-02-09 04:22:08.986000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-09 04:21:32.834000 | drive | 생성 | 생성 |  |
-| 2026-02-09 04:21:32.834000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-09 04:21:32.834000 | drive | 폴더에 추가 | 폴더에 추가 |  |
 | 2026-02-09 04:16:12 | github | commit |  |  |
-| 2026-02-09 03:59:01.427000 | drive | 이름 변경 | 이름 변경 |  |
 | 2026-02-09 03:58:51.663000 | drive | 편집 (1회) | 편집 (1회) |  |
-| 2026-02-09 03:58:51.663000 | drive | 폴더에 추가 | 폴더에 추가 |  |
-| 2026-02-09 03:58:51.663000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-09 03:58:51.663000 | drive | 업로드 | 업로드 |  |
-| 2026-02-09 03:58:40.336000 | drive | 폴더에 추가 | 폴더에 추가 |  |
-| 2026-02-09 03:58:40.336000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-09 03:58:40.336000 | drive | 생성 | 생성 |  |
 | 2026-02-08 16:22:57.965000 | slack | message |  |  |
 | 2026-02-08 16:22:57.965000 | slack | message |  |  |
 | 2026-02-08 16:02:49 | github | commit |  |  |
@@ -182,21 +78,8 @@ Records: 228
 | 2026-02-05 10:22:40.501000 | slack | message |  |  |
 | 2026-02-05 10:22:40.501000 | slack | message |  |  |
 | 2026-02-05 08:25:20.940000 | drive | 편집 (7회) | 편집 (7회) |  |
-| 2026-02-05 07:56:27.672000 | drive | prefetch_item_content | prefetch_item_content |  |
 | 2026-02-05 07:06:06.176000 | drive | 편집 (1회) | 편집 (1회) |  |
-| 2026-02-05 07:06:06.176000 | drive | 업로드 | 업로드 |  |
-| 2026-02-05 07:06:06.176000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 07:06:06.176000 | drive | 폴더에 추가 | 폴더에 추가 |  |
 | 2026-02-05 07:05:58.373000 | drive | 편집 (1회) | 편집 (1회) |  |
-| 2026-02-05 07:05:58.373000 | drive | 폴더에 추가 | 폴더에 추가 |  |
-| 2026-02-05 07:05:58.373000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 07:05:58.373000 | drive | 업로드 | 업로드 |  |
-| 2026-02-05 07:05:40.721000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-05 07:05:40.721000 | drive | 생성 | 생성 |  |
-| 2026-02-05 07:05:40.721000 | drive | 폴더에 추가 | 폴더에 추가 |  |
-| 2026-02-05 07:03:58.690000 | drive | 폴더에 추가 | 폴더에 추가 |  |
-| 2026-02-05 07:03:58.690000 | drive | 생성 | 생성 |  |
-| 2026-02-05 07:03:58.690000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
 | 2026-02-05 06:21:45.841000 | slack | message |  |  |
 | 2026-02-05 06:21:45.841000 | slack | message |  |  |
 | 2026-02-05 05:20:52 | github | commit |  |  |
@@ -209,11 +92,7 @@ Records: 228
 | 2026-02-04 10:01:46 | github | commit |  |  |
 | 2026-02-04 07:52:54.628000 | drive | 편집 (10회) | 편집 (10회) |  |
 | 2026-02-04 07:11:16 | github | commit |  |  |
-| 2026-02-04 06:12:18.946000 | drive | 문서 공개 설정 변경 | 문서 공개 설정 변경 |  |
 | 2026-02-04 06:12:18.946000 | drive | 편집 (2회) | 편집 (2회) |  |
-| 2026-02-04 06:09:04.111000 | drive | 폴더에 추가 | 폴더에 추가 |  |
-| 2026-02-04 06:09:04.111000 | drive | 접근 권한 변경 | 접근 권한 변경 |  |
-| 2026-02-04 06:09:04.111000 | drive | 업로드 | 업로드 |  |
 | 2026-02-04 06:04:25.693000 | slack | message |  |  |
 | 2026-02-04 06:04:25.693000 | slack | message |  |  |
 | 2026-02-04 05:23:33 | github | commit |  |  |

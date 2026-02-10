@@ -1,5 +1,12 @@
 # HR Activity Report - Jeongun Baek
 
+## Final Performance Summary
+Jeongun Baek logged 92 records, concentrated in slack (74), github (16). GitHub contributions include 0 pull request(s) and 16 commit(s), showing steady engineering output. With 74 Slack message(s), communication and coordination appear to be a consistent part of their workflow. Overall strength this period is communication and cross-team coordination.
+
+## Current Work Focus
+Recent GitHub work centers on ai-tokamak and DRB-node, with changes such as Strengthen language matching instructions in system prompt; Use masked links and prevent bare URLs in prompts and Discord formatter. Slack activity is concentrated in tokamak-dev and ai-tokamak-network, indicating active coordination in those threads. Meeting participation is not explicitly recorded for this member in the meeting dataset.
+
+
 Records: 92
 
 ## By Source
@@ -15,10 +22,8 @@ Records: 92
 ## Records (latest first)
 | timestamp | source | type | action | title |
 |---|---|---|---|---|
-| 2026-02-09 13:10:59.222000 | drive | sync_item_content | sync_item_content |  |
 | 2026-02-09 05:14:38.584000 | slack | message |  |  |
 | 2026-02-09 05:14:38.584000 | slack | message |  |  |
-| 2026-02-09 05:12:48.317000 | drive | sync_item_content | sync_item_content |  |
 | 2026-02-09 04:24:44.581000 | slack | message |  |  |
 | 2026-02-09 04:24:44.581000 | slack | message |  |  |
 | 2026-02-09 04:20:59.064000 | slack | message |  |  |
