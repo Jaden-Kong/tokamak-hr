@@ -15,6 +15,17 @@ import urllib.request
 import urllib.error
 from string import Template
 
+DEFAULT_CSV_PATH = os.path.join(os.path.dirname(__file__), "newcomers info list.csv")
+DEFAULT_CSV_FIELDS = [
+    "name",
+    "team",
+    "start_date",
+    "account_email",
+    "account_password",
+    "video_url",
+    "welcome_url",
+    "slack_email",
+]
 
 HTML_TEMPLATE = Template(
     """<!doctype html>
@@ -165,6 +176,31 @@ def sanitize_filename(name: str) -> str:
     name = re.sub(r"\s+", "_", name)
     name = re.sub(r"[^\w\-\u0080-\uFFFF]", "", name)
     return name or "employee"
+
+def append_to_csv(csv_path: str, row: dict[str, str]) -> bool:
+    fieldnames = DEFAULT_CSV_FIELDS
+    rows: list[dict[str, str]] = []
+    if os.path.exists(csv_path):
+        with open(csv_path, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            fieldnames = reader.fieldnames or DEFAULT_CSV_FIELDS
+            rows = list(reader)
+
+    new_row = {key: "" for key in fieldnames}
+    for key, value in row.items():
+        if key in new_row:
+            new_row[key] = value
+
+    if rows and all(rows[-1].get(key, "") == new_row.get(key, "") for key in fieldnames):
+        return False
+
+    file_exists = os.path.exists(csv_path)
+    with open(csv_path, "a" if file_exists else "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        if not file_exists:
+            writer.writeheader()
+        writer.writerow(new_row)
+    return True
 
 
 def to_bullets(items: list[str]) -> str:
@@ -514,7 +550,13 @@ def main() -> int:
     parser.add_argument(
         "--prep-deploy",
         action="store_true",
-        help="Create deploy_<name> folder with index.html + mp4 for drag-and-drop hosting.",
+        default=True,
+        help="Create deploy_<name> folder with index.html + mp4 for drag-and-drop hosting (default: on).",
+    )
+    parser.add_argument(
+        "--no-prep-deploy",
+        action="store_true",
+        help="Disable deploy folder creation.",
     )
     parser.add_argument("--drive-upload", action="store_true", help="Upload HTML/video to Google Drive.")
     parser.add_argument("--drive-folder-id", help="Google Drive folder ID for uploads.")
@@ -543,7 +585,19 @@ def main() -> int:
         action="store_true",
         help="Send Slack DM after generating (requires SLACK_BOT_TOKEN).",
     )
+    parser.add_argument(
+        "--auto-csv-path",
+        default=DEFAULT_CSV_PATH,
+        help="CSV file to auto-append when using single entry.",
+    )
+    parser.add_argument(
+        "--no-auto-csv",
+        action="store_true",
+        help="Disable auto-append to default CSV when using single entry.",
+    )
     args = parser.parse_args()
+    if args.no_prep_deploy:
+        args.prep_deploy = False
 
     slack_token = os.getenv("SLACK_BOT_TOKEN") if args.send_slack else None
     if args.send_slack and not slack_token:
@@ -634,7 +688,7 @@ def main() -> int:
         start_date = args.start_date or prompt("Start date (YYYY-MM-DD):", dt.date.today().isoformat())
         video_url = args.video_url or prompt("Onboarding video URL:", "TBD")
 
-        generate_one(
+        _, uploaded_welcome_url = generate_one(
             name=name,
             team=team,
             start_date=start_date,
@@ -651,6 +705,20 @@ def main() -> int:
             drive_folder_id=args.drive_folder_id,
             prep_deploy=args.prep_deploy,
         )
+        if not args.no_auto_csv:
+            append_to_csv(
+                args.auto_csv_path,
+                {
+                    "name": name,
+                    "team": team,
+                    "start_date": start_date,
+                    "account_email": args.account_email or "",
+                    "account_password": args.account_password or "",
+                    "video_url": video_url,
+                    "welcome_url": uploaded_welcome_url or "",
+                    "slack_email": "",
+                },
+            )
 
         if not args.live and args.name and args.team and args.start_date and (args.video_url or args.video_file):
             return 0
